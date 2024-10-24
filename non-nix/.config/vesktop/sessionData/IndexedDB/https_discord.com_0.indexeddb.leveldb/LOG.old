@@ -1,0 +1,6 @@
+2024/10/23-18:45:43.269 da2 Creating DB /home/astor/.config/vesktop/sessionData/IndexedDB/https_discord.com_0.indexeddb.leveldb since it was missing.
+2024/10/23-18:45:43.274 da2 Reusing MANIFEST /home/astor/.config/vesktop/sessionData/IndexedDB/https_discord.com_0.indexeddb.leveldb/MANIFEST-000001
+2024/10/23-19:27:46.635 da2 Level-0 table #5: started
+2024/10/23-19:27:46.637 da2 Level-0 table #5: 11121 bytes OK
+2024/10/23-19:27:46.639 da2 Delete type=0 #3
+2024/10/23-19:27:46.639 da2 Manual compaction at level-0 from (begin) .. (end); will stop at (end)

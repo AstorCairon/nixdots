@@ -1,0 +1,7 @@
+2024/09/20-19:15:59.656 7947 Reusing MANIFEST /home/astor/.config/Signal/IndexedDB/file__0.indexeddb.leveldb/MANIFEST-000001
+2024/09/20-19:15:59.656 7947 Recovering log #4
+2024/09/20-19:15:59.656 7947 Reusing old log /home/astor/.config/Signal/IndexedDB/file__0.indexeddb.leveldb/000004.log 
+2024/09/20-19:15:59.663 7947 Level-0 table #8: started
+2024/09/20-19:15:59.664 7947 Level-0 table #8: 470 bytes OK
+2024/09/20-19:15:59.666 7947 Delete type=0 #4
+2024/09/20-19:15:59.666 7947 Manual compaction at level-0 from '\x00\x02\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x03\x00\x00\x00' @ 0 : 0; will stop at (end)

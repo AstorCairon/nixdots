@@ -1,0 +1,35 @@
+2024/10/24-09:09:44.597 fdf Reusing MANIFEST /home/astor/.config/vesktop/sessionData/Local Storage/leveldb/MANIFEST-000001
+2024/10/24-09:09:44.605 fdf Recovering log #23
+2024/10/24-09:09:44.606 fdf Level-0 table #26: started
+2024/10/24-09:09:44.608 fdf Level-0 table #26: 19698 bytes OK
+2024/10/24-09:09:44.610 fdf Delete type=0 #23
+2024/10/24-09:09:44.610 ff7 Compacting 4@0 + 1@1 files
+2024/10/24-09:09:44.614 ff7 Generated table #28@0: 31 keys, 22155 bytes
+2024/10/24-09:09:44.614 ff7 Compacted 4@0 + 1@1 files => 22155 bytes
+2024/10/24-09:09:44.617 ff7 compacted to: files[ 0 1 1 0 0 0 0 ]
+2024/10/24-09:09:44.617 ff7 Delete type=2 #19
+2024/10/24-09:09:44.617 ff7 Delete type=2 #17
+2024/10/24-09:09:44.617 ff7 Delete type=2 #24
+2024/10/24-09:09:44.617 ff7 Delete type=2 #26
+2024/10/24-09:09:44.617 ff7 Delete type=2 #22
+2024/10/24-09:49:55.843 fe0 Level-0 table #30: started
+2024/10/24-09:49:55.846 fe0 Level-0 table #30: 36107 bytes OK
+2024/10/24-09:49:55.848 fe0 Delete type=0 #27
+2024/10/24-11:19:10.735 fe0 Level-0 table #32: started
+2024/10/24-11:19:10.738 fe0 Level-0 table #32: 26368 bytes OK
+2024/10/24-11:19:10.740 fe0 Delete type=0 #29
+2024/10/24-12:35:38.165 fe0 Level-0 table #34: started
+2024/10/24-12:35:38.168 fe0 Level-0 table #34: 27344 bytes OK
+2024/10/24-12:35:38.170 fe0 Delete type=0 #31
+2024/10/24-14:27:19.918 fe0 Level-0 table #36: started
+2024/10/24-14:27:19.921 fe0 Level-0 table #36: 38284 bytes OK
+2024/10/24-14:27:19.923 fe0 Delete type=0 #33
+2024/10/24-14:27:19.923 fe0 Compacting 4@0 + 1@1 files
+2024/10/24-14:27:19.926 fe0 Generated table #37@0: 36 keys, 23066 bytes
+2024/10/24-14:27:19.926 fe0 Compacted 4@0 + 1@1 files => 23066 bytes
+2024/10/24-14:27:19.928 fe0 compacted to: files[ 0 1 1 0 0 0 0 ]
+2024/10/24-14:27:19.928 fe0 Delete type=2 #32
+2024/10/24-14:27:19.928 fe0 Delete type=2 #36
+2024/10/24-14:27:19.928 fe0 Delete type=2 #30
+2024/10/24-14:27:19.928 fe0 Delete type=2 #34
+2024/10/24-14:27:19.928 fe0 Delete type=2 #28
