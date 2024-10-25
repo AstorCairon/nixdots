@@ -1,6 +1,0 @@
-2024/09/05-16:28:08.400 2164 Creating DB /home/astor/.config/Signal/IndexedDB/file__0.indexeddb.leveldb since it was missing.
-2024/09/05-16:28:08.405 2164 Reusing MANIFEST /home/astor/.config/Signal/IndexedDB/file__0.indexeddb.leveldb/MANIFEST-000001
-2024/09/05-16:28:08.411 2162 Level-0 table #5: started
-2024/09/05-16:28:08.412 2162 Level-0 table #5: 487 bytes OK
-2024/09/05-16:28:08.414 2162 Delete type=0 #3
-2024/09/05-16:28:08.414 2162 Manual compaction at level-0 from '\x00\x01\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x02\x00\x00\x00' @ 0 : 0; will stop at (end)
