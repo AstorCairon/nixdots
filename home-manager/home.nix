@@ -23,6 +23,7 @@
    tty-clock 
    lolcat
    bat
+   peaclock
 
    nerdfonts
    noto-fonts
@@ -77,6 +78,7 @@
    pciutils
    usbutils
 
+   brave
    firefox
    krita
    blender
