@@ -4,16 +4,17 @@
   inputs = {
 
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+
     nixvim = {
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-   
-    #hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
-    #hyprland-plugins = {
-      #url = "github:hyprwm/hyprland-plugins";
-      #inputs.hyprland.follows = "hyprland";
+
+    #firefox-addons = {  !!!! FIXME: !!!! this input does not work correctly! Please revisit that. Would be nice to witness nix-declared firefox addons in my life! 
+     # url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
+      #inputs.nixpkgs.follows = "nixpkgs";
     #};
 
     stylix.url = "github:danth/stylix";
@@ -22,6 +23,7 @@
      url = "github:nix-community/home-manager";
      inputs.nixpkgs.follows = "nixpkgs";
     };
+
   };
 
   outputs = { self, nixpkgs, home-manager, nixos-hardware, nixvim, stylix, ... }@inputs: {
@@ -40,7 +42,7 @@
       home-manager.nixosModules.home-manager
       {
          home-manager.useGlobalPkgs = true;
-         home-manager.users.astor = import ./home-manager/home.nix;
+         home-manager.users.astor = import ./home-manager/home.nix; 
         }
       ];
     };

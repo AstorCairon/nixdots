@@ -5,10 +5,14 @@
 
     globals.mapleader = " ";
 
-    keymaps = [
+    keymaps = [ #TODO: further configure keymaps!
       {
         action = "<cmd>Telescope live_grep<CR>";
 	key = "<leader>t";
+      }
+      {
+        action = ":NvimTreeToggle<CR>";
+	key = "<leader>e";
       }
     ];
 
@@ -54,6 +58,9 @@
     alpha.enable = true;
     #avante.enable  = true;
     alpha.theme = "dashboard";
+    nvim-colorizer.enable = true;
+    neocord.enable = true; #FIXME: !!!! neocord cannot find discord to apply itself! It is crying! :'((
+    nvim-tree.enable = true;
 
     #airline = {
     #  enable = true;
