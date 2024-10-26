@@ -9,7 +9,7 @@
   #};
 
   home.packages = with pkgs; [ 
-   fastfetch                 # I am a big rice lord. All of the packages in the first chunk are basically useless. So, if you want to save that bit of space for something else, just delete this chunk outta this list.	
+   fastfetch                 #  All of the packages in the first chunk are basically useless. So, if you want to save that bit of space for something else, just delete this chunk outta this list.	
    nitch
    pfetch
    hyfetch
@@ -21,7 +21,6 @@
    cmatrix
    figlet
    tty-clock 
-   zfxtop
    lolcat
    bat
 
@@ -35,6 +34,8 @@
    catimg 
    genpass  
    zoxide
+   eza
+   fzf
    
    zip
    xz
@@ -42,9 +43,6 @@
    p7zip
 
    ripgrep
-   eza
-   fzf
-   bat
    wl-clipboard
    xdg-utils
 
@@ -79,12 +77,12 @@
    pciutils
    usbutils
 
+   firefox
    krita
    blender
    libreoffice 
    obs-studio
-   vlc
-   libreoffice
+   vlc 
    signal-desktop
    telegram-desktop
    vesktop
@@ -328,8 +326,8 @@
 
           history = {
         share = true; # 
-        size = 9999999; # Number of history lines to keep.
-        save = 9999999; # Number of history lines to save.
+        size = 9999999; 
+        save = 9999999; 
         ignoreDups = true; # Do not enter command lines into the history list if they are duplicates of the previous event.
         extended = true; # Save timestamp into the history file.
       };
@@ -360,6 +358,8 @@
              '';
       
     };
+
+    
 
     home.stateVersion = "24.05";
   programs.home-manager.enable = true;

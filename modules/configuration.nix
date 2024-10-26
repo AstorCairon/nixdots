@@ -3,16 +3,17 @@
 
 { config, lib, pkgs, ... }:
 
-let
+#let
   #dynamically include hardware-configuration.nix if it exists
-  hardwareConfig = if builtins.pathExists ./../hardware-configuration.nix
-                   then import ./../hardware-configuration.nix
-                   else {};
-in
+ # hardwareConfig = if builtins.pathExists ./../hardware-configuration.nix
+ #                  then import ./../hardware-configuration.nix
+ #                  else {};
+#in
 
 {
   imports =
     [ 
+      ./hardware-configuration.nix
       ./base/locale.nix
       ./base/environment.nix
       ./base/audio.nix
@@ -23,7 +24,7 @@ in
       ./base/theming.nix
       ./base/nixvim.nix
       ./hardware/gaming.nix
-    ] ++ [ hardwareConfig ];
+    ]; #++ [ hardwareConfig ];
 
     
   audio.enable = true;
