@@ -115,8 +115,7 @@
 
    kitty
    hyprland
-   hyprpicker
-   rofi
+   hyprpicker 
    swww
    hyprcursor
    nautilus
