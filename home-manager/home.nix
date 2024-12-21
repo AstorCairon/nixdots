@@ -25,14 +25,20 @@
    bat
    peaclock
 
-   nerdfonts
-   noto-fonts
+   nerd-fonts.agave #try monofur, iosevka, zed-mono, lekton, departure-mono, recursive-mono, sauce-code-pro, daddy-time-mono, comic-shanns-mono
+   nerd-fonts.mplus
+   nerd-fonts.symbols-only
+   nerd-fonts.wine-fonts 
+   texlivePackages.kpfonts
+   texlivePackages.tpslifonts
+   texlivePackages.hebrew-fonts
+   texlivePackages.fonts-churchslavonic
+   texlivePackages.concmath-fonts
 
    oh-my-zsh
    zsh
    thefuck
-   tmux
-   catimg 
+   tmux 
      
    zoxide
    eza
@@ -46,6 +52,10 @@
    ripgrep
    wl-clipboard
    xdg-utils
+   ffmpeg
+
+   xorg.libX11
+   libglvnd
 
    nmap
    dnsutils
@@ -61,8 +71,10 @@
    zstd
    gnupg
 
+
    nh
    lf
+   hexyl
 
    btop
    iotop
@@ -79,10 +91,12 @@
    pciutils
    usbutils
    
+   cargo
+   rustc
+   gcc
 
    brave 
-   krita
-   blender
+   krita 
    libreoffice 
    obs-studio
    vlc 
@@ -91,6 +105,9 @@
    vesktop
    spotify
    spicetify-cli
+   celestia
+   logisim-evolution
+   osu-lazer-bin
 
    steam
    lutris
@@ -114,7 +131,15 @@
 
   wayland.windowManager.hyprland.settings = {
 
-    "exec-once" = "swww-daemon && zsh";
+     exec-once = [
+      # finalize startup
+      "zsh"
+      # set cursor for HL itself
+      "swww-daemon"
+      "sleep 1 && swww img /path/to/your/desired/wallpaper.jpg --transition-type fade --transition-duration 1
+"
+      "ags"    
+    ];
 
     "$mod" = "SUPER";
 
@@ -131,24 +156,33 @@
       active_opacity = "1.0";
       inactive_opacity = "1.0";
 
-      drop_shadow = "true";
-      shadow_range = "4";
-      shadow_render_power = "3";
-      shadow_offset = "0 5";
       #lib.mkDefault "col.shadow" = "rgba(00000099)";
 
       blur = {
         enabled = "true";
-	size = "1";
-	passes = "7";
+	brightness = 1.0;
+	contrast = 1.0;
+	noise = 0.01;
+	size = "2";
+	passes = "6";
 	vibrancy = "1.1"; #"0.1696";
+	vibrancy_darkness = 0.5;
+	popups = true;
+	popups_ignorealpha = 0.2;
       };
+        shadow = {
+	  enabled = true;
+	  offset = "0 15";
+	  range = 100;
+	  render_power = 2;
+	  scale = 0.97;
+	};
     };
 
     animations = {
       enabled = true;
 
-      bezier = "myBezier, 0.15, 1.1, 0.05, 1.01"; #last num: how much the window pops out first when opened
+      bezier = "myBezier, 0.25, 1.1, 0.05, 1.01"; #last num: how much the window pops out first when opened
       						#third num: how slow the neighboring window fills the space when a
 						#window has been closed
 						#second num: how fast a window pops in
@@ -250,6 +284,8 @@
   programs.kitty = lib.mkForce {
     enable = true;
     settings = {
+      font_family = "agave";
+      font_size = 13;
       confirm_os_window_close = 0;
       dynamic_background_opacity = true;
     enable_audio_bell = true;
@@ -311,16 +347,13 @@
           "systemd" # useful aliases for systemd. https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/systemd
           "thefuck" # corrects your previous console command. https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/thefuck
           "tmux" # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/tmux
-          "z"# https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/z
-	  "catimg"
-	  "colorize"
+          "z"# https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/z 
 	  "compleat" 
 	  "extract"
 	  "eza"
 	  "genpass"
 	  "gitfast"
-	  "lol"
-	  "rand-quote"
+	  "lol" 
 	  "rust"
 	  "zoxide"
 	  
@@ -378,7 +411,8 @@
          "browser.download.panel.shown" = true;
 	 "dom.security.https_only_mode" = true;
 	 "signon.rememberSignons" = false;
-       };
+       }; 
+		
 
        bookmarks = [
          {

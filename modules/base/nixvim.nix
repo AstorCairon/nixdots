@@ -11,7 +11,7 @@
 	key = "<leader>t";
       }
       {
-        action = ":NvimTreeToggle<CR>";
+        action = ":CHADopen<CR>";
 	key = "<leader>e";
       }
     ];
@@ -22,6 +22,8 @@
       Comment.underline = false;
       Comment.bold = true;
     };
+
+    clipboard.providers.wl-copy.enable = true;
  
     plugins = {
 
@@ -54,13 +56,17 @@
     treesitter.enable = true;
     luasnip.enable = true;
     web-devicons.enable = true;
-    arrow.enable = true;
+    barbar.enable = true;
     alpha.enable = true;
     #avante.enable  = true;
     alpha.theme = "dashboard";
     nvim-colorizer.enable = true;
     neocord.enable = true; #FIXME: !!!! neocord cannot find discord to apply itself! It is crying! :'((
-    nvim-tree.enable = true;
+    chadtree.enable = true;
+    ccc.enable = true;
+    comment-box.enable = true;
+    sandwich.enable = true;
+    illuminate.enable = true;
 
     #airline = {
     #  enable = true;
