@@ -1,7 +1,7 @@
 { pkgs, ... }:
   {
     stylix.enable = true;
-    stylix.image = /home/astor/wallpapers/pattern2.png;
+    stylix.image = /home/astor/wallpapers/forest1.jpg;
     stylix.polarity = "dark";
 
     stylix.base16Scheme = {

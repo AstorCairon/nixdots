@@ -3,14 +3,19 @@
 
 { config, lib, pkgs, ... }:
 
-let
+#let
   #dynamically include hardware-configuration.nix if it exists
-  hardwareConfig = if builtins.pathExists ./../hardware-configuration.nix
-                   then import ./../hardware-configuration.nix
-                   else {};
-in
+ # Import hardware-configuration.nix dynamically, providing the necessary arguments
+ # hardwareConfig = if builtins.pathExists ./../hardware-configuration.nix
+  #                 then lib.evalModules {
+    #                 modules = [ ./../hardware-configuration.nix ];
+   #                  inherit config lib pkgs;
+     #              }.config
+      #             else {}; 
+#in
 
-{
+{ 
+ 
   imports =
     [ 
       
@@ -24,9 +29,12 @@ in
       ./base/theming.nix
       ./base/nixvim.nix
       ./hardware/gaming.nix
-    ] ++ [ hardwareConfig ];
+      /etc/nixos/modules/hardware-configuration.nix
 
-    
+    ]; # ++ (if hardwareConfig != {} then [ hardwareConfig ] else []);
+ 
+
+   
   audio.enable = true;
   environment.enable = true;
   environment.variables.EDITOR = "neovim";
@@ -44,6 +52,8 @@ in
    services.xserver.enable = true;
    services.printing.enable = true;
    services.libinput.enable = true;
+
+   
   
   # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
   system.stateVersion = "24.05"; 

@@ -30,7 +30,7 @@
 
     nixosConfigurations.Toaster = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
-      system = "x86-64-linux";
+      system = "x86_64-linux";
       modules = [
 
         ./modules/configuration.nix

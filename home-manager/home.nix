@@ -27,8 +27,7 @@
 
    nerd-fonts.agave #try monofur, iosevka, zed-mono, lekton, departure-mono, recursive-mono, sauce-code-pro, daddy-time-mono, comic-shanns-mono
    nerd-fonts.mplus
-   nerd-fonts.symbols-only
-   nerd-fonts.wine-fonts 
+   nerd-fonts.symbols-only 
    texlivePackages.kpfonts
    texlivePackages.tpslifonts
    texlivePackages.hebrew-fonts
@@ -284,7 +283,7 @@
     enable = true;
     settings = {
       font_family = "agave";
-      font_size = 13;
+      font_size = 11;
       confirm_os_window_close = 0;
       dynamic_background_opacity = true;
     enable_audio_bell = true;
