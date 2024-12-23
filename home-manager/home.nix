@@ -130,12 +130,8 @@
   wayland.windowManager.hyprland.settings = {
 
      exec-once = [
-      # finalize startup
-      "zsh"
-      # set cursor for HL itself
+      "zsh" 
       "swww-daemon"
-      "sleep 1 && swww img /path/to/your/desired/wallpaper.jpg --transition-type fade --transition-duration 1
-"
       "ags"    
     ];
 
