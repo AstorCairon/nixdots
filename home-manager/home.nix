@@ -387,7 +387,7 @@
 
       # extra entries for .zshrc 
       initExtra = ''
-			export PATH="/home/astor/.nix-profile/bin:$PATH"
+			export PATH="~/.nix-profile/bin:$PATH"
 
              '';
       

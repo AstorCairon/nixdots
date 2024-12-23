@@ -18,7 +18,7 @@
 
   environment.sessionVariables = {
     STEAM_EXTRA_COMPAT_TOOLS_PATHS =
-      "home/astor/.steam/root/compatibilitytools.d";
+      "~/.steam/root/compatibilitytools.d";
   };
 
  }

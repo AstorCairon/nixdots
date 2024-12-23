@@ -5,6 +5,11 @@
 
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
+    hyprland-qtutils = { 
+      url = "github:hyprwm/hyprland-qtutils";
+      inputs.nixpkgs.follows = "nixpkgs";
+   };
+
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
     nixvim = {
@@ -12,10 +17,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    #firefox-addons = {  !!!! FIXME: !!!! this input does not work correctly! Please revisit that. Would be nice to witness nix-declared firefox addons in my life! 
-     # url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
-      #inputs.nixpkgs.follows = "nixpkgs";
-    #};
+    firefox-addons = {   
+      url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     stylix.url = "github:danth/stylix";
 

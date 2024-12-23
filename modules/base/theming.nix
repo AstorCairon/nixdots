@@ -1,7 +1,7 @@
 { pkgs, ... }:
   {
     stylix.enable = true;
-    stylix.image = /home/astor/wallpapers/forest1.jpg;
+    stylix.image = ../../pix/forest1.jpg;
     stylix.polarity = "dark";
 
     stylix.base16Scheme = {
@@ -27,17 +27,17 @@
   stylix.fonts = {
     serif = {
       package = pkgs.dejavu_fonts;
-      name = "DejaVu Serif";
+      name = "Dejavu fonts";
     };
 
     sansSerif = {
       package = pkgs.dejavu_fonts;
-      name = "DejaVu Sans";
+      name = "Dejavu fonts";
     };
 
     monospace = {
       package = pkgs.dejavu_fonts;
-      name = "DejaVu Sans Mono";
+      name = "Dejavu fonts";
     };
 
     emoji = {
