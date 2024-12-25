@@ -1,43 +1,42 @@
 { pkgs, ... }:
   {
     stylix.enable = true;
-    stylix.image = ../../pix/forest1.jpg;
+    stylix.image = ../../pix/kurzgesagt-space.jpg;
     stylix.polarity = "dark";
 
     stylix.base16Scheme = {
-    base00 = "#12241C"; ##051835
-    base01 = "#274B39";
-    base02 = "#376A51";
-    base03 = "#468666";
-    base04 = "#539E78";
-    base05 = "#62BA8E";
-    base06 = "#6DD09F";
-    base07 = "#7AE8B1";
-    base08 = "#AFD55C";
-    base09 = "#B4D769";
-    base0A = "#B6D572";
-    base0B = "#BBD77D";
-    base0C = "#BED788";
-    base0D = "#C1D792";
-    base0E = "#C5D79E";
-    base0F = "#CAD9AB";
+    base00 = "#0C1F2E"; ##051835
+    base01 = "#133249";
+    base02 = "#274d6b";
+    base03 = "#336287";
+    base04 = "#3e6fa0";
+    base05 = "#4a89ba";
+    base06 = "#84b4d8";
+    base07 = "#90c5ed";
+    base08 = "#fc5f91";
+    base09 = "#fc748a";
+    base0A = "#fc8874";
+    base0B = "#fcaa7b";
+    base0C = "#e07082";
+    base0D = "#db7e6d";
+    base0E = "#db9b76";
+    base0F = "#dbb472";
   };
 
   
   stylix.fonts = {
-    serif = {
-      package = pkgs.dejavu_fonts;
-      name = "Dejavu fonts";
-    };
 
-    sansSerif = {
-      package = pkgs.dejavu_fonts;
-      name = "Dejavu fonts";
-    };
-
-    monospace = {
-      package = pkgs.dejavu_fonts;
-      name = "Dejavu fonts";
+   serif = {
+    package = pkgs.prociono;
+    name = "Prociono";
+  };
+  sansSerif = {
+    package = pkgs.eurofurence;
+    name = "EuroFurence";
+  };
+  monospace = {
+    package = pkgs.nerd-fonts.monofur;
+    name = "Monofur Nerd Font Mono";
     };
 
     emoji = {

@@ -17,7 +17,7 @@
    bat
    peaclock
 
-   nerd-fonts.agave #try monofur, iosevka, zed-mono, lekton, departure-mono, recursive-mono, sauce-code-pro, daddy-time-mono, comic-shanns-mono
+   nerd-fonts.monofur #try monofur, iosevka, zed-mono, lekton, departure-mono, recursive-mono, sauce-code-pro, daddy-time-mono, comic-shanns-mono
    nerd-fonts.mplus
    nerd-fonts.symbols-only 
    texlivePackages.kpfonts
@@ -25,6 +25,8 @@
    texlivePackages.hebrew-fonts
    texlivePackages.fonts-churchslavonic
    texlivePackages.concmath-fonts
+   prociono
+   eurofurence
 
    oh-my-zsh
    zsh
@@ -110,7 +112,7 @@
    swww
    hyprcursor
    nautilus
-   ags
+   waybar 
 
    grim
    slurp

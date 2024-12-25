@@ -8,7 +8,7 @@
      exec-once = [
       "zsh" 
       "swww-daemon"
-      "ags"    
+      "waybar"    
     ];
 
     "$mod" = "SUPER";
@@ -16,8 +16,10 @@
     general = {
       gaps_in = "6";
       gaps_out = "21";
-      border_size = "0";
+      border_size = "3";
       layout = "dwindle";
+      "col.active_border" = lib.mkForce "rgba(249,227,222,0.87)";
+      "col.inactive_border" = lib.mkForce "rgba(249,227,222,0.87)";
     };
 
     decoration = {
@@ -25,8 +27,7 @@
        
       active_opacity = "1.0";
       inactive_opacity = "1.0";
-
-      #lib.mkDefault "col.shadow" = "rgba(00000099)";
+ 
 
       blur = {
         enabled = "true";
@@ -40,13 +41,15 @@
 	popups = true;
 	popups_ignorealpha = 0.2;
       };
-        shadow = {
-	  enabled = true;
-	  offset = "0 15";
-	  range = 100;
-	  render_power = 2;
-	  scale = 0.97;
-	};
+        shadow = lib.mkForce {
+        enabled = true;
+        color = "rgba(252,83,83,0.95)";
+        ignore_window = true;
+        offset = "1 1";
+        range = 15;
+        render_power = 3;
+        scale = 1.0;
+      }; 
     };
 
     animations = {

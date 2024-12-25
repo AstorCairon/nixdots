@@ -4,7 +4,7 @@
     enable = true;
     settings = {
       font_family = "agave";
-      font_size = 11;
+      font_size = 13;
       confirm_os_window_close = 0;
       dynamic_background_opacity = true;
     enable_audio_bell = true;
