@@ -12,6 +12,8 @@
         # ublock-origin
        #];
 
+       #!!!The following configuration here is NOT mine! 
+
        userContent = ''
         /*
 ┏━╸┏━┓┏┓╻╺┳╸┏━┓
