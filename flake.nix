@@ -31,9 +31,10 @@
 
   };
 
-  outputs = { self, nixpkgs, home-manager, nixos-hardware, nixvim, stylix, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, nixos-hardware, nixvim, stylix, firefox-addons, ... }@inputs: {
 
     nixosConfigurations.Toaster = nixpkgs.lib.nixosSystem {
+      #specialArgs = { inputs = inputs; };
       specialArgs = {inherit inputs;};
       system = "x86_64-linux";
       modules = [
@@ -47,7 +48,9 @@
       home-manager.nixosModules.home-manager
       {
          home-manager.useGlobalPkgs = true;
-         home-manager.users.astor = import ./home-manager/home.nix; 
+         home-manager.users.astor = import ./home-manager/home.nix;
+	 
+
         }
       ];
     };

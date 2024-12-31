@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ...}: {
+{ config, lib, pkgs, qtPLuginPackages, ...}: {
   
   options = {
     environment.enable =
@@ -9,8 +9,12 @@
   config = lib.mkIf config.environment.enable {
     services.displayManager.sddm = {
       enable = true;
-      package = pkgs.kdePackages.sddm;
+      package = pkgs.sddm;
+       extraPackages = [pkgs.sddm-sugar-dark];
+      theme = "sugar-dark";
     };
+
+   environment.etc."sddm/themes/sugar-dark".source = "/nix/store/jh8k6j3cxi8n35n8g1l8jmk87fm69b5l-sddm-sugar-dark-1.2/share/sddm/themes/sugar-dark";
 
    programs.hyprland = {
      enable = true;

@@ -8,7 +8,9 @@
      exec-once = [
       "zsh" 
       "swww-daemon"
-      "waybar"    
+      "waybar"
+      "hypridle"
+      "swaync"
     ];
 
     "$mod" = "SUPER";
@@ -36,28 +38,29 @@
 	noise = 0.01;
 	size = "2";
 	passes = "6";
-	vibrancy = "1.1"; #"0.1696";
-	vibrancy_darkness = 0.5;
+	vibrancy = "0.8"; #"0.1696";
+	vibrancy_darkness = 0.64;
 	popups = true;
 	popups_ignorealpha = 0.2;
       };
         shadow = lib.mkForce {
         enabled = true;
-        color = "rgba(252,83,83,0.95)";
+        color = "rgba(12,187,214,0.92)"; #"rgba(134,220,221,0.95)";
+	color_inactive	= "rgba(252,93,93,0.95)";
         ignore_window = true;
         offset = "1 1";
         range = 15;
-        render_power = 3;
-        scale = 1.0;
+        render_power = 5;
+        scale = 2.0;
       }; 
     };
 
     animations = {
       enabled = true;
 
-      bezier = "myBezier, 0.25, 1.1, 0.05, 1.01"; #last num: how much the window pops out first when opened
+      bezier = "myBezier, 0.05, 1.2, 0.3, 1.06"; #last num: how much the window pops out first when opened + how much neighboring windows ..expand(?) when it is closed
       						#third num: how slow the neighboring window fills the space when a
-						#window has been closed
+						#window has been closed + how fast window pops in
 						#second num: how fast a window pops in
 
       animation = [
@@ -105,12 +108,26 @@
       workspace_swipe = "false";
     };
 
-    windowrulev2 = "suppressevent maximize, class:.*";
+    windowrulev2 = [
+     "suppressevent maximize, class:.*"
+    
+     ];
+
+     windowrule = [
+
+      "opacity 0.7 0.7,class:^(discord)$"
+      "opacity 0.7 0.7,class:^(vesktop)$"
+     ];
+
+     #layerrule = [ 
+      #"blur, swaync-notification-window"
+      #"layerrule = blur, swaync-control-center"
+     #];
 
     bindm = [
       "$mod, mouse:272, movewindow"
       "$mod, mouse:273, resizewindow"
-    ];
+     ];
 
     bind = [
         "$mod, B, exec, hyprctl switchxkblayout logitech-k800 next"
@@ -124,14 +141,14 @@
 	"$mod, J, togglesplit"
 	"$mod, C, killactive"
 	"$mod, M, exit"
-	"$mod, E, exec, nautilus"
-	"$mod, R, exec, rofi"
+	"$mod, E, exec, nautilus"	
 	"$mod, P, pseudo"
 	"$mod, V, togglefloating"
         "$mod, F, exec, firefox"
 	"$mod, Q, exec, kitty"
 	"$mod, D, exec, vesktop"
 	"$mod, Y, exec, spotify"
+	"$mod, R, exec, ~/.config/rofi/rofi.sh"
 	"ALT, S, exec, grim -g \"$(slurp)\" "
 	"ALT, C, exec, grim -g \"$(slurp -d)\" - | wl-copy"
 	

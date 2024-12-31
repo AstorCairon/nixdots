@@ -1,0 +1,5 @@
+listener {
+    timeout = 180                           # in seconds.
+    on-timeout = hyprlock # command to run when timeout has passed.
+    # command to run when activity is detected after timeout has fired.
+}

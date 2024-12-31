@@ -29,7 +29,7 @@
       ./base/theming.nix
       ./base/nixvim.nix
       ./hardware/gaming.nix
-      ./hardware-configuration.nix
+      ./hardware-configuration.nix 
 
     ]; # ++ (if hardwareConfig != {} then [ hardwareConfig ] else []);
  

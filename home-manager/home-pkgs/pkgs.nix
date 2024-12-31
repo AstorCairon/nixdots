@@ -22,8 +22,7 @@
    nerd-fonts.symbols-only 
    texlivePackages.kpfonts
    texlivePackages.tpslifonts
-   texlivePackages.hebrew-fonts
-   texlivePackages.fonts-churchslavonic
+   texlivePackages.hebrew-fonts 
    texlivePackages.concmath-fonts
    prociono
    eurofurence
@@ -69,6 +68,8 @@
    lf
    hexyl
 
+   nix-prefetch
+
    btop
    iotop
    iftop
@@ -104,15 +105,20 @@
 
    steam
    lutris
-   bottles
-
+   
    kitty
    hyprland
-   hyprpicker 
+   hyprpicker
+   hypridle
+   hyprlock
    swww
    hyprcursor
    nautilus
-   waybar 
+   waybar
+   rofi
+   swaynotificationcenter
+   zsh-powerlevel10k
+   wlogout
 
    grim
    slurp
