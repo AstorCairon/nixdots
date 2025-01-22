@@ -3,7 +3,65 @@
     programs.nixvim = { 
     enable = true;
 
-    globals.mapleader = " ";
+     globalOpts = {
+    # Line numbers
+    number = true;
+    relativenumber = true;
+
+    # Always show the signcolumn, otherwise text would be shifted when displaying error icons
+    signcolumn = "yes";
+
+    # Enable mouse
+    mouse = "a";
+
+    # Search
+    ignorecase = true;
+    smartcase = true;
+  
+    # Configure how new splits should be opened
+    splitright = true;
+    splitbelow = true;
+
+    list = true;
+    # NOTE: .__raw here means that this field is raw lua code
+    listchars.__raw = "{ tab = '» ', trail = '·', nbsp = '␣' }";
+
+    # Tab defaults (might get overwritten by an LSP server)
+    tabstop = 4;
+    shiftwidth = 4;
+    softtabstop = 0;
+    expandtab = true;
+    smarttab = true;
+
+    # System clipboard support, needs xclip/wl-clipboard
+    
+    # Save undo history
+    undofile = true;
+
+
+    # Highlight the current line for cursor
+    cursorline = true;
+
+    # Show line and column when searching
+    ruler = true;
+
+    # Global substitution by default
+    gdefault = true;
+
+    # Start scrolling when the cursor is X lines away from the top/bottom
+    scrolloff = 5;
+  };
+
+  
+
+ 
+
+  autoCmd = [
+    {
+      event = [ "VimEnter" ];
+      callback = { __raw = "function() if vim.fn.argv(0) == '' then require('telescope.builtin').find_files() end end"; };
+    }
+  ];
 
     keymaps = [ #TODO: further configure keymaps!
       {

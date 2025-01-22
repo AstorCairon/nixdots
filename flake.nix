@@ -33,13 +33,14 @@
 
   outputs = { self, nixpkgs, home-manager, nixos-hardware, nixvim, stylix, firefox-addons, ... }@inputs: {
 
-    nixosConfigurations.Toaster = nixpkgs.lib.nixosSystem {
-      #specialArgs = { inputs = inputs; };
+    nixosConfigurations = { 
+      Toaster = 
+      nixpkgs.lib.nixosSystem {  
       specialArgs = {inherit inputs;};
       system = "x86_64-linux";
       modules = [
 
-        ./modules/configuration.nix
+        ./hosts/Toaster/configuration.nix
       
       nixvim.nixosModules.nixvim
       inputs.stylix.nixosModules.stylix
@@ -48,11 +49,37 @@
       home-manager.nixosModules.home-manager
       {
          home-manager.useGlobalPkgs = true;
-         home-manager.users.astor = import ./home-manager/home.nix;
+         home-manager.users.astor = import ./hosts/Toaster/home.nix;
 	 
 
         }
-      ];
+       ];
+      };
+
+    Microwave = 
+      
+      nixpkgs.lib.nixosSystem { 
+      specialArgs = {inherit inputs;};
+      system = "x86_64-linux";
+      modules = [
+
+        ./hosts/Microwave/configuration.nix
+      
+      nixvim.nixosModules.nixvim
+      inputs.stylix.nixosModules.stylix
+      nixos-hardware.nixosModules.focus-m2-gen1
+
+      home-manager.nixosModules.home-manager
+      {
+         home-manager.useGlobalPkgs = true;
+         home-manager.users.astor = import ./hosts/Microwave/home.nix;
+	 
+
+        }
+       ];
+
+      
     };
   };
+ };
 }

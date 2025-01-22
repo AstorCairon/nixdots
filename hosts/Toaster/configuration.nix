@@ -19,17 +19,8 @@
   imports =
     [ 
       
-      ./base/locale.nix
-      ./base/environment.nix
-      ./base/audio.nix
-      ./base/user.nix
-      ./base/syspkgs.nix
-      ./hardware/bootloader.nix
-      ./base/networking.nix 
-      ./base/theming.nix
-      ./base/nixvim.nix
-      ./hardware/gaming.nix
-      ./hardware-configuration.nix 
+      ./../../modules
+      ./hardware-configuration.nix
 
     ]; # ++ (if hardwareConfig != {} then [ hardwareConfig ] else []);
  
@@ -53,6 +44,58 @@
    services.printing.enable = true;
    services.libinput.enable = true;
 
+   #USER
+
+    users.users.astor = {
+      isNormalUser = true;
+      extraGroups = [ "wheel" ];
+      packages = with pkgs; [
+        tree
+      ];
+    };
+
+    #PACKAGES
+  
+    environment.systemPackages = with pkgs; [
+    
+    neovim
+    wget
+    curl
+    git
+    sddm
+    gparted
+    #sddm-astronaut
+    sddm-sugar-dark
+    qt5.qtgraphicaleffects
+  ];
+
+  #NETWORKING
+
+  networking.hostName = "Toaster";
+
+  services.openssh.enable = false;
+  #networking.proxy.default = "http://user:password@proxy:port/";
+  networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+
+  #some programs need SUID wrappers, can be configured further or are started in user sessions.
+  programs.mtr.enable = true;
+  programs.gnupg.agent = {
+    enable = false;
+    enableSSHSupport = false;
+  };
+
+  networking.firewall = {
+  enable = true;
+  allowedTCPPorts = [ 80 443 587 993 995 9001 9030 9050 9051 ];
+  allowedUDPPorts = [ 53 123 161 67 68 5353 ];
+  allowedUDPPortRanges = [
+    { from = 8000; to = 8010; }
+    { from = 50000; to = 65535; } 
+    #{from = 6000; to 6063; } open this range if you need remote access (such as over SSH) to X11 applications
+  ];
+};
+
+    
    
   
   # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
